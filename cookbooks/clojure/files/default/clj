@@ -1,0 +1,26 @@
+#!/bin/bash
+# Clojure wrapper script.
+# With no arguments runs Clojure's REPL.
+
+# Put the Clojure jar from the cellar and the current folder in the classpath.
+
+## if [ "$#" -eq 0 ]; then
+##     java -cp $CLOJURE clojure.main --repl
+## else
+##     java -cp $CLOJURE clojure.main "$@"
+## fi
+
+lein2 repl
+# CLOJURE=$CLASSPATH:/home/stef/.clojure_libs/clojure-1.4.0.jar:${PWD}
+# breakchars="(){}[],^%$#@\"\";:''|\\"
+# CLOJURE_DIR=~/clojure
+# if [ $# -eq 0 ]; then 
+#   echo "using completions"
+#   exec rlwrap --remember -c -b "$breakchars" \
+#     -f "$HOME"/.clj_completions \
+#     java -cp $HOME/.clojure_libs/*: -Dfile.encoding=UTF-8 clojure.main
+#   #exec java -cp $HOME/.clojure_libs/*: clojure.main 
+# else
+#   #exec java -cp "$CLOJURE" clojure.main $1 -- "$@"
+#   exec java -cp $HOME/.clojure_libs/*: clojure.main $1 -- "$@"
+# fi
